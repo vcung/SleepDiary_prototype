@@ -1,6 +1,4 @@
 .sleep_dairy_title {
-	font-family: Tahoma; 
-	font-size: 40px; 
 	font-weight: normal; 
 	color: #08306b;	
     text-align:center;
@@ -12,13 +10,4 @@
 
 #id{
 	color:#ffffff;
-}
-
-td a{
-    font-family:"Comic Sans MS", cursive, sans-serif
-}
-
-
-h1{
-    font-family:"Comic Sans MS", cursive, sans-serif
 }

@@ -14,9 +14,9 @@
 <table align="center" class = 'headtitle'>
     <tr class="sleep_dairy_title" align="center">
         <td align="center" valign = 'bottom'>
-         <h1>Sleep Dairy 
+         <h1 class = 'fbig'>Sleep Dairy 
          <a id = 'back' href = '2-main.html'>
-        <font size = '3' color = 'white'>back</font>
+        <font class = 'fsmall' color = 'white'>back</font>
          </a> </h1>       
          </td>
     </tr>
@@ -25,10 +25,10 @@
 <table align="center">
     <tr>
         <td background = 'img/sleeping-cat.jpg' class = 'screen_td' align = 'center'>
-        <a href = '5-wake_up.html'><br>
-                <font color = 'white' size = "10"> G' Night!<font>
+        <a href = '5-wake_up.html'>
+                <p class = 'fbig fcolor'> G' Night!</p>
                 <br>
-                <font size = '2'>Tap here when you wake up to record the time<font>
+                <p class = 'fsmall fcolor'>Tap here when you wake up to record the time</p>
                 <br>
         </a>
         </td>
@@ -36,12 +36,28 @@
 </table>
 
 <script>
-   d3.selectAll('.screen_td')
-     .attr('width', para.screen_width)
-     .attr('height', para.screen_height)
+  d3.selectAll('.menu_2td')
+     .attr('height', para.menu_2height)
+     .attr('width', para.menu_2width)
      .attr('align', 'center')
 
    d3.select('.headtitle')
      .attr('width', para.head_width)
      .attr('height', para.head_height)
+
+   d3.select('.screen_td')
+     .attr('width', para.head_width)
+     .attr('height', para.screen_height)
+    
+   d3.selectAll('.fcolor')
+     .style('color', 'white')
+
+   d3.selectAll('.fmid')
+     .style('font-size', para.mid)
+
+   d3.selectAll('.fbig')
+     .style('font-size', para.big)
+
+   d3.selectAll('.fsmall')
+     .style('font-size', para.small)
 </script></body></html>
