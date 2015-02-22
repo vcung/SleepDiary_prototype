@@ -14,8 +14,9 @@ var para = { 'menu_height': screen.height * 0.5,
     'top_margin_small' : screen.height * 0.1
     },
     //new Date(year, month, day, hours, minutes)
+
     data = [
-    {'Date1': new Date(2015,2,15),
+     'e1': {'Date1': new Date(2015,2,15),
      'Date2': new Date(2015,2,16),
      'BedTime': new Date(2015,2,15,23,30),
      'Wakeup': new Date(2015,2,16,07,30),
@@ -23,7 +24,7 @@ var para = { 'menu_height': screen.height * 0.5,
      'Rating': 4,
      'Comment': 'say something...'},
 
-     {'Date1': new Date(2015,2,16),
+     'e2': {'Date1': new Date(2015,2,16),
      'Date2': new Date(2015,2,17),
      'BedTime': new Date(2015,2,16,23,40),
      'Wakeup': new Date(2015,2,17,08,30),
@@ -32,12 +33,5 @@ var para = { 'menu_height': screen.height * 0.5,
      'Comment': 'say something...'},
      ],
 
-     current_entry = 
-     {'Date1': new Date(2015,2,16),
-     'Date2': new Date(2015,2,17),
-     'BedTime': new Date(2015,2,16,23,40),
-     'Wakeup': new Date(2015,2,17,08,30),
-     'Interrupt': [],
-     'Rating': 4,
-     'Comment': 'say something...'}
+     current_entry = 'e2'
     ;
