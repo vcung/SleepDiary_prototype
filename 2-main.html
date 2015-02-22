@@ -1,0 +1,74 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+</head>
+<body>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="parameters.js"></script>
+
+<table align="center" class = 'headtitle'>
+    <tr class="sleep_dairy_title" align="center">
+    	<td align="center" valign = 'bottom'>
+         <h1  class = 'fbig'>Sleep Dairy</h1>       
+         </td>
+    </tr>
+</table>
+<div></div>
+<table align="center">
+    <tr align="center">
+        <td  class = 'top_margin'>
+        </td>
+    </tr>
+
+    <tr align="center">
+    	<td  class = 'menu_td'>
+              <a role="button" class="btn btn-primary btn-lg btn-block" href = '3-add_entry.html'> <p class = 'fmid' >New Entry</p></a>
+        </td>
+    </tr>
+    <tr>
+        <td class = 'menu_td'>
+              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p   class = 'fmid'>Analyze My Sleep</p></a>
+        </td>  
+     </tr>
+    <tr>
+        <td  class = 'menu_td'>
+              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p  class = 'fmid'>View Entries</p></a>
+        </td>    
+    </tr>
+    <tr>
+         <td class = 'menu_td'>
+              <a role="button" class="btn btn-primary btn-lg btn-block" href = ''> <p class = 'fmid'>Settings <br></p></a>
+        </td>  
+    </tr>
+</table>
+</div>
+
+<script>
+   d3.selectAll('.menu_td')
+     .attr('height', para.menu_height)
+     .attr('width', para.menu_width)
+     .attr('align', 'center')
+
+    d3.selectAll('.top_margin')
+     .attr('height', para.top_margin_small)
+
+   d3.select('.headtitle')
+     .attr('width', para.head_width)
+     .attr('height', para.head_height)
+
+   d3.selectAll('.fmid')
+     .style('font-size', para.mid)
+     .style('line-height', '300%')
+
+   d3.selectAll('.fbig')
+     .style('font-size', para.big)
+
+   d3.selectAll('.fsmall')
+     .style('font-size', para.small)
+</script>
+</body></html>
