@@ -45,17 +45,21 @@
   </div>
 </nav>
 
-<div class="container sleep-bg clickable" onClick="directToWakeUp()">
+<div class="container sleep-bg clickable">
     <div class="bg-text">
         <h1 class="text-center">G'Night!</h1>
         <p class="text-center">Tap here when you wake up to record the time</p>
+    </div>
+    <div class="center-block sleep-btns overlay">
+      <a href="4-good_night.html" class="btn btn-default" role="button">Continue to Sleep</a>
+      <a href="6-auto_entry.html" class="btn btn-default" role="button">Get Up Now</a>
     </div>
 </div>
 <script>
   function directToWakeUp() {
     window.location = "5-wake_up.html";
   }
-  d3.selectAll('.menu_2td')
+  /*d3.selectAll('.menu_2td')
      .attr('height', para.menu_2height)
      .attr('width', para.menu_2width)
      .attr('align', 'center')
@@ -78,5 +82,5 @@
      .style('font-size', para.big)
 
    d3.selectAll('.fsmall')
-     .style('font-size', para.small)
+     .style('font-size', para.small)*/
 </script></body></html>
