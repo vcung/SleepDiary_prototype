@@ -1,4 +1,4 @@
-var para = { 'menu_height': screen.height * 0.5,
+/*var para = { 'menu_height': screen.height * 0.5,
     'menu_width': screen.width * 0.5 * 3,
     'menu_2height': screen.height * 0.8,
     'menu_2width': screen.width * 1.3,
@@ -35,3 +35,58 @@ var para = { 'menu_height': screen.height * 0.5,
 
      current_entry = 'e2'
     ;
+    ;
+*/
+
+$(document).ready(function(){
+$("#back-save-custom").click(function(){
+    $(".overlay").show();
+    $(".overlay .yes-btn").click(function() {
+        window.location = "9-view_entries.html";
+    });
+    $(".overlay .no-btn").click(function () {
+        window.location = "2-main.html";
+    });
+});
+
+$(".sleep-bg").click(function () {
+   $(".overlay").show();
+});
+$(".glyphicon-trash").click(function () {
+   $(".overlay").show();
+   var selected = $(this);
+    $(".overlay .yes-btn").click(function() {
+        $(selected).parents(".entry").remove();
+        $(".overlay").hide();
+    });
+    $(".overlay .no-btn").click(function () {
+        $(".overlay").hide();
+    });
+});
+
+$("#save-auto-entry").click(function(){
+    $(".overlay").show();
+    $(".overlay .yes-btn").click(function() {
+        window.location = "9-view_entries.html";
+    });
+    $(".overlay .no-btn").click(function () {
+        window.location = "4-good_night.html";
+        $(".overlay").show(); //if this doesn't show popup, goto 5-wake_up.html
+    });
+});
+
+$("#reset").click(function(){
+    $(".overlay").show();
+    $(".overlay .yes-btn").click(function() {
+
+        window.location = "2-main.html";
+    });
+    $(".overlay .no-btn").click(function () {
+        $(".overlay").hide();
+    });
+});
+$(".layout-btn").click(function(){
+    $(this).addClass('active');
+    $(this).siblings(".btn").removeClass('active');
+});
+});
