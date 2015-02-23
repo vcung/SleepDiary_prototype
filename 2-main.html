@@ -11,43 +11,41 @@
 <script src="js/d3.v3.min.js"></script>
 <script src="parameters.js"></script>
 
-<table align="center" class = 'headtitle'>
-    <tr class="sleep_dairy_title" align="center">
-    	<td align="center" valign = 'bottom'>
-         <h1  class = 'fbig'>Sleep Dairy</h1>       
-         </td>
-    </tr>
-</table>
-<div></div>
-<table align="center">
-    <tr align="center">
-        <td  class = 'top_margin'>
-        </td>
-    </tr>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Sleep Diary</a>
+    </div>
+  </div>
+</nav>
 
-    <tr align="center">
-    	<td  class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '3-add_entry.html'> <p class = 'fmid' >New Entry</p></a>
-        </td>
-    </tr>
-    <tr>
-        <td class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p   class = 'fmid'>Analyze My Sleep</p></a>
-        </td>  
-     </tr>
-    <tr>
-        <td  class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p  class = 'fmid'>View Entries</p></a>
-        </td>    
-    </tr>
-    <tr>
-         <td class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = ''> <p class = 'fmid'>Settings <br></p></a>
-        </td>  
-    </tr>
-</table>
-</div>
-
+    <div class="container">
+        <div class="main-btns center-block btn-group-vertical" role="group">
+            <a href="3-add_entry.html" class="btn btn-default" role="button">New Entry</a>
+            <a href="#" class="btn btn-default" role="button">Analyze My Sleep</a>
+            <a href="9-view_entries.html" class="btn btn-default" role="button">View Entries</a>
+            <a href="#" class="btn btn-default" role="button">Settings</a>
+            <!--<td  class = 'menu_td'>
+                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '3-add_entry.html'> <p class = 'fmid' >New Entry</p></a>
+            </td>
+        </tr>
+        <tr>
+            <td class = 'menu_td'>
+                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p   class = 'fmid'>Analyze My Sleep</p></a>
+            </td>  
+         </tr>
+        <tr>
+            <td  class = 'menu_td'>
+                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p  class = 'fmid'>View Entries</p></a>
+            </td>    
+        </tr>
+        <tr>
+             <td class = 'menu_td'>
+                  <a role="button" class="btn btn-primary btn-lg btn-block" href = ''> <p class = 'fmid'>Settings <br></p></a>
+            </td>  
+        </tr>-->
+        </div>
+    </div>
 <script>
    d3.selectAll('.menu_td')
      .attr('height', para.menu_height)

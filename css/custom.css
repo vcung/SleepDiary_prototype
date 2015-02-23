@@ -7,7 +7,87 @@
     background: -moz-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* Standard syntax */
 }
+body {
+	font-size: 14px;
+}
+.navbar-default .navbar-brand {
+	color: #08306b;	
+	font-weight: bold;
+}
+.float-right {
+	float: right;
+}
+.btn {
+	color:#fff;
+	background: #286090;
+}
+.btn:hover {
+	color: #fff;
+	background:#23527c;
+}
+.italicize {	font-style: italic;   }
 
+.fsmall { 	font-size: 0.8em;  }
+.flabel {font-weight: bold;}
+.clickable {
+	cursor: pointer;
+}
+.glyphicon {
+	cursor: pointer;
+}
+.half-screen {
+	margin-top: 50px;
+}
+.bg-text {
+	position: relative;
+	top:100px;
+	z-index: 0;
+}
+.overlay {
+	background: rgba(255,255,255,0.6);
+	z-index: 100;
+	position: relative;
+}
+.sleep-bg {
+	background: url("../img/sleeping-cat.jpg") 50%;
+	background-size: 180%;
+	width: 300px;
+	min-height: 400px;
+	height: auto;
+	color: #fff;
+}
+.bg-height {
+	height: 400px;
+}
 #id{
-	color:#ffffff;
+	color: #ffffff;
+}
+
+.main-btns, .sleep-btns, .sm-screen {
+	max-width: 300px;
+}
+.main-btns .btn {
+	padding: 10px;
+	margin: 15px auto;
+}
+.sleep-btns .btn {
+	width: 45%;
+	padding:45px 0px;
+	margin:25px 5px;
+
+}
+.back-btn {
+	float: right;
+	height: 50px;
+	padding: 15px 15px;
+	line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+.nav:before, .nav:after, .navbar:before, 
+.navbar:after, .navbar-header:before, 
+.navbar-header:after, .navbar-collapse:before, 
+.navbar-collapse:after {
+	display: inline;
+}
 }

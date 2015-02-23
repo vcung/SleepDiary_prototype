@@ -11,7 +11,7 @@
 <script src="js/d3.v3.min.js"></script>
 <script src="parameters.js"></script>
 
-<table align="center" class = 'headtitle'>
+<!--<table align="center" class = 'headtitle'>
     <tr class="sleep_dairy_title" align="center">
         <td align="center" valign = 'bottom'>
          <h1 class = 'fbig'>Sleep Dairy 
@@ -34,8 +34,26 @@
         </td>
     </tr>
 </table>
+-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Sleep Diary</a>
+    </div>
+      <a class="navbar-link back-btn" href="3-add_entry.html">Back</a>
+  </div>
+</nav>
 
+<div class="container sleep-bg clickable" onClick="directToWakeUp()">
+    <div class="bg-text">
+        <h1 class="text-center">G'Night!</h1>
+        <p class="text-center">Tap here when you wake up to record the time</p>
+    </div>
+</div>
 <script>
+  function directToWakeUp() {
+    window.location = "5-wake_up.html";
+  }
   d3.selectAll('.menu_2td')
      .attr('height', para.menu_2height)
      .attr('width', para.menu_2width)
