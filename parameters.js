@@ -16,24 +16,24 @@ var para = {
     'People who say they sleep like a baby usually don\'t have one. ~Leo J. Burke'
     ],
     data = [
-     {'Bedtime': {'Date':'2015-02-15', 'Time':'23:30'}, 
-     'Wakeup': {'Date':'2015-02-16', 'Time':'7:30'}, 
-     'Interrupt': ['0:10', '0:20'],
-     'Rating': 5,
+     {'Bedtime': {'Date':'02-15-2015', 'Time':'23:30'}, 
+     'Wakeup': {'Date':'02-16-2015', 'Time':'07:30'}, 
+     'Interrupt': ['00:10', '00:20'],
+     'Rating': 4.3,
      'Comment': ''},
 
-     {'Bedtime': {'Date':'2015-02-16', 'Time':'00:30'}, 
-     'Wakeup':{'Date':'2015-02-17', 'Time':'8:30'}, 
-     'Interrupt': ['2:10'],
-     'Rating': 4,
-     'Comment': 'Nightmare'}
+     {'Bedtime': {'Date':'02-17-2015', 'Time':'00:30'}, 
+     'Wakeup':{'Date':'02-17-2015', 'Time':'08:30'}, 
+     'Interrupt': ['02:10'],
+     'Rating': 4.2,
+     'Comment': 'I was plagued by nightmares'}
     ],
     current_entry = [
     {'Bedtime': {'Date':'2015-02-22', 'Time':'22:30'}, 
-     'Wakeup': {'Date':'2015-02-23', 'Time':'7:30'}, 
+     'Wakeup': {'Date':'2015-02-23', 'Time':'07:30'}, 
      'Interrupt': [],
      'Rating': 5,
-     'Comment': ''}]
+     'Comment': 'I was plagued by nightmares'}]
 
 //     //new Date(year, month, day, hours, minutes)
 //     data = [
