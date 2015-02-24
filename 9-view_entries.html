@@ -63,8 +63,11 @@
     .html(function(){
     	var arr = d.Interrupt,
             target = ''
-    	arr.forEach(function(k){
-            target += k + ' ';
+    	arr.forEach(function(k, i){
+        if(i < arr.length - 1)
+            target += k + ', ';
+          else
+            target += k
     	})
     	return '<span class="flabel">Interrupt: </span>'+ target
     })
