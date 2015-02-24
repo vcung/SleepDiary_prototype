@@ -83,6 +83,11 @@ var para = {
     current_entry = [
    ]
 
+function formatDate(d){
+    var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' '
+     return tmp;
+}
+
 function formatTime(d){
     var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' ',
         hours =  d.getHours(),
@@ -109,6 +114,7 @@ function getHoursBetween (d1, d2) {
     var tmp = Math.abs(d1.getTime() - d2.getTime())
     return tmp / 36 /100000;
 }
+
 
 $(document).ready(function(){
 $("#back-save-custom").click(function(){
