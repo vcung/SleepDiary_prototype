@@ -10,102 +10,46 @@
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
-<script src="parameters.js"></script>
-<!--
-<table align="center" class = 'headtitle'>
-    <tr class="sleep_dairy_title" align="center">
-    	<td align="center" valign = 'bottom'>
-         <h1  class = 'fbig'>Sleep Dairy</h1>       
-         </td>
-    </tr>
-</table>
-<div></div>
-<table align="center">
-    <tr align="center">
-        <td  class = 'top_margin'>
-        </td>
-    </tr>
 
-    <tr align="center">
-    	<td  class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '3-add_entry.html'> <p class = 'fmid' >New Entry</p></a>
-        </td>
-    </tr>
-    <tr>
-        <td class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p   class = 'fmid'>Analyze My Sleep</p></a>
-        </td>  
-     </tr>
-    <tr>
-        <td  class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p  class = 'fmid'>View Entries</p></a>
-        </td>    
-    </tr>
-    <tr>
-         <td class = 'menu_td'>
-              <a role="button" class="btn btn-primary btn-lg btn-block" href = ''> <p class = 'fmid'>Settings <br></p></a>
-        </td>  
-    </tr>
-</table>
-</div>
-
--->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Sleep Diary</a>
+      <a href="#" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
   </div>
 </nav>
 
-    <div class="container">
+<div id = 'motto'></div>
+
+<div class="container">
         <div class="main-btns center-block btn-group-vertical" role="group">
-            <a href="3-add_entry.html" class="btn btn-default" role="button">New Entry</a>
-            <a href="7-select_time.html" class="btn btn-default" role="button">Analyze My Sleep</a>
-            <a href="9-view_entries.html" class="btn btn-default" role="button">View Entries</a>
-            <a href="settings.html" class="text-center btn btn-default" role="button">Settings</a>
-            <!--<td  class = 'menu_td'>
-                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '3-add_entry.html'> <p class = 'fmid' >New Entry</p></a>
-            </td>
-        </tr>
-        <tr>
-            <td class = 'menu_td'>
-                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p   class = 'fmid'>Analyze My Sleep</p></a>
-            </td>  
-         </tr>
-        <tr>
-            <td  class = 'menu_td'>
-                  <a role="button" class="btn btn-primary btn-lg btn-block" href = '#'> <p  class = 'fmid'>View Entries</p></a>
-            </td>    
-        </tr>
-        <tr>
-             <td class = 'menu_td'>
-                  <a role="button" class="btn btn-primary btn-lg btn-block" href = ''> <p class = 'fmid'>Settings <br></p></a>
-            </td>  
-        </tr>-->
+            <a href="3-add_entry.html" class="btn btn-default" role="button"><p class = 'menu_label'>New Entry</p></a>
+            <a href="7-select_time.html" class="btn btn-default" role="button"><p class = 'menu_label'>Analyze My Sleep</p></a>
+            <a href="9-view_entries.html" class="btn btn-default" role="button"><p class = 'menu_label'>View Entries</p></a>
+            <a href="settings.html" class="text-center btn btn-default" role="button"><p class = 'menu_label'>Settings</p></a>
         </div>
     </div>
+<script src="parameters.js"></script>
 <script>
-   d3.selectAll('.menu_td')
-     .attr('height', para.menu_height)
-     .attr('width', para.menu_width)
-     .attr('align', 'center')
+   d3.select('#motto')
+   .append('p')
+   .text(function(){
+       var seed = Math.random() * motto.length
+       return motto[Math.round(seed)];
+   })
 
-    d3.selectAll('.top_margin')
-     .attr('height', para.top_margin_small)
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
 
-   d3.select('.headtitle')
-     .attr('width', para.head_width)
-     .attr('height', para.head_height)
+   d3.selectAll('.menu_label')
+    .style('line-height', function(){
+          if(para.layout === 'standard')
+            return '180%'
+          else if(para.layout === 'cozy')
+            return '100%'
+    })
+    .style('font-size', para.fbig)
 
-   d3.selectAll('.fmid')
-     .style('font-size', para.mid)
-     .style('line-height', '300%')
-
-   d3.selectAll('.fbig')
-     .style('font-size', para.big)
-
-   d3.selectAll('.fsmall')
-     .style('font-size', para.small)
 </script>
 </body></html>
