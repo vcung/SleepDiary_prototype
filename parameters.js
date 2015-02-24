@@ -14,7 +14,26 @@ var para = {
     'A good laugh and a long sleep are the best cures in the doctor\'s book. ~Irish Proverb',
     'Life is too short to sleep on low thread-count sheets. ~Leah Stussy',
     'People who say they sleep like a baby usually don\'t have one. ~Leo J. Burke'
-    ]
+    ],
+    data = [
+     {'Bedtime': {'Date':'2015-02-15', 'Time':'23:30'}, 
+     'Wakeup': {'Date':'2015-02-16', 'Time':'7:30'}, 
+     'Interrupt': ['0:10', '0:20'],
+     'Rating': 5,
+     'Comment': ''},
+
+     {'Bedtime': {'Date':'2015-02-16', 'Time':'00:30'}, 
+     'Wakeup':{'Date':'2015-02-17', 'Time':'8:30'}, 
+     'Interrupt': ['2:10'],
+     'Rating': 4,
+     'Comment': 'Nightmare'}
+    ],
+    current_entry = [
+    {'Bedtime': {'Date':'2015-02-22', 'Time':'22:30'}, 
+     'Wakeup': {'Date':'2015-02-23', 'Time':'7:30'}, 
+     'Interrupt': [],
+     'Rating': 5,
+     'Comment': ''}]
 
 //     //new Date(year, month, day, hours, minutes)
 //     data = [
@@ -35,7 +54,6 @@ var para = {
 //      'Comment': 'say something...'}
 //      ],
 //      current_entry = 'e2'
-    ;
 
 $(document).ready(function(){
 $("#back-save-custom").click(function(){
