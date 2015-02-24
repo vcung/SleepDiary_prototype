@@ -18,20 +18,24 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="2-main.html" class="navbar-brand">Sleep Diary</a>
+      <a href="2-main.html" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
       <a class="navbar-link back-btn" href="2-main.html">Back</a>
   </div>
 </nav>
 <div class="container">
-	<div class="center-block sm-screen text-center">
-		<p>
-			<h2>Change Layout</h2>
-			<a href="#" class="btn btn-default layout-btn">Standard</a>
-			<a href="#" class="btn btn-default layout-btn">Cozy</a>
-		</p>
-		<a href="#" id="reset" class="btn btn-default">Reset</a>
-		<p class="fsmall italicize">Delete all posts</p>
+	<div class="sm-screen">
+		<table>
+			<tr>
+			<td>Change Layout:</td>
+			<td><a href="#" class="btn btn-default btn-block layout-btn" class = 'standard'><p class = 'standard'>Standard</p></a></td>
+			<td><a href="#" class="btn btn-default layout-btn"  class = 'cozy'><p class = 'cozy'>Cozy</p></a></td>
+		    </tr>
+	    </table>
+		<br>
+		<hr>
+		<a href="#" id="reset" class="btn btn-default red center-block "><p>Reset</p></a>
+	    <p class="fsmall italicize" align = 'center'>Delete all posts</p>
 	</div>
 	<div class="center-block yesno-btns overlay">
 		<p>Are you sure you want to delete all entries?</p>
@@ -39,6 +43,19 @@
 		<a href="#" class="yes-btn btn btn-default" role="button">Yup</a>
 	</div>
 </div>
+<script>
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
 
+   d3.select('.' + para.layout)
+   .style('text-decoration', 'underline')
+
+   d3.selectAll('.fmid')
+   .style('font-size', para.fmid)
+
+   d3.selectAll('.red')
+   .style('background', '#fb8072')
+</script>
 </body>
 </html>
