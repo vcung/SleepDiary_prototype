@@ -23,7 +23,12 @@ body {
 }
 .btn {
 	color:#fff;
-	background: #286090;
+	background: #80b1d3;
+}
+
+.btn-default {
+	color:#fff;
+	background: #80b1d3;
 }
 .btn:hover {
 	color: #fff;
@@ -116,18 +121,17 @@ body {
 
 .line {
   fill: none;
-  stroke: #b3e2cd;
+  stroke: #80b1d3;
   stroke-width: 1.5px;
 }
 
 .bar {
-  fill: #b3e2cd;
+  fill: #80b1d3;
 }
 
 .bar:hover {
   fill: brown;
 }
-
 
 @media screen and (max-width: 768px) {
 .nav:before, .nav:after, .navbar:before, 
