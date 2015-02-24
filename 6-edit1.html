@@ -20,7 +20,7 @@
     <div class="navbar-header">
       <a href="2-main.html" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
-      <a class="navbar-link back-btn" id="save-auto-entry" href="#">Back</a>
+      <a class="navbar-link back-btn" id="back-to-entries">Back</a>
   </div>
 </nav>
   <div class="container">
@@ -29,27 +29,16 @@
 			<table vertical-align = 'center'>
 				<tr><td><label>Bedtime:</label><td></tr>
 				<tr>
-					<td><input id="beddate" type="date" class="inline-field form-control" value="2015-02-20"></td>
+					<td><input id="beddate" type="date" class="inline-field form-control" value="2015-02-15"></td>
 					<td width = '10'></td>
-<<<<<<< HEAD
-			        <td><input id="bedtime" type="time" class="form-control" value="23:30"></td>
+			        <td><input id="bedtime" type="time" class="inline-field form-control" value="00:30"></td>
 				</tr>
 				<tr><td><label>Wakeup:</label></td></tr>
                 <tr>
-					<td><input id="wakedate" type="date" class="form-control" value="2015-02-21"></td>
+					<td><input id="wakedate" type="date" class="inline-field form-control" value="2015-02-16"></td>
 		            <td width = '10'></td>	        
 			        <td>
-		     	    <input id="waketime" type="time" class="form-control" value="08:40">
-=======
-			        <td><input id="bedtime" type="time" class="inline-field form-control" value="20:30"></td>
-				</tr>
-				<tr><td><label>Wakeup:</label></td></tr>
-                <tr>
-					<td><input id="wakedate" type="date" class="inline-field form-control" value="2015-02-20"></td>
-		            <td width = '10'></td>	        
-			        <td>
-		     	    <input id="waketime" type="time" class="inline-field form-control" value="20:40">
->>>>>>> origin/master
+		     	    <input id="waketime" type="time" class="inline-field form-control" value="8:30">
 		            </td>           
 		        </tr>
 		    </table>
@@ -68,25 +57,14 @@
 		</div>
 		<div class="form-group">
 			<label for="comments">Comments:</label>
-			<textarea id="comments" row=3 class="form-control"></textarea>
+			<textarea id="comments" row=3 class="form-control">I was plagued by nightmares</textarea>
 		</div>
-<<<<<<< HEAD
-		<div align = 'right'>
-		<a href="9-view_entries.html" type="button" class="btn btn-default save">Save</a>
-	     </div>
-	</form>
-	<div class="center-block yesno-btns overlay">
-		<p>Do you want to save this entry?</p>
-  		<a href="2-main.html" class="no-btn btn btn-default" role="button">Nope</a>
-  		<a href="9-view_entries.html" class="yes-btn btn btn-default save" role="button">Yup</a>
-=======
 		<a href="9-view_entries.html" type="button" class="btn btn-default save">Save</a>
 	</form>
 	<div class="center-block yesno-btns overlay">
 		<p>Do you want to save this entry?</p>
   		<a href="#" class="no-btn btn btn-default" role="button">Nope</a>
   		<a href="#" class="yes-btn btn btn-default save" role="button">Yup</a>
->>>>>>> origin/master
 	</div>
   </div>
   <script>

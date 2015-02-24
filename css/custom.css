@@ -3,10 +3,10 @@
 	color: #08306b;	
     text-align:center;
 	background: -webkit-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* Standard syntax */
-}*/
+    /*background: -o-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* Standard syntax */
+/*}*/
 
 #id{
 	color:#ffffff;
