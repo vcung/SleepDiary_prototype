@@ -12,7 +12,7 @@
 	color:#ffffff;
 }
 body {
-	font-size: 14px;
+	font-size: 16px;
 }
 .navbar-default .navbar-brand {
 	color: #08306b;	
@@ -106,7 +106,7 @@ body {
 	height: 50px;
 	padding: 15px 15px;
 	line-height: 20px;
-}
+}m
 
 .axis path, .axis line {
   fill: none;
@@ -129,6 +129,11 @@ body {
 }
 
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]  {
+	padding: 5px;
+}
+}
 @media screen and (max-width: 768px) {
 .nav:before, .nav:after, .navbar:before, 
 .navbar:after, .navbar-header:before, 

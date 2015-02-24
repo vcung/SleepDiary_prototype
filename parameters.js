@@ -149,7 +149,15 @@ $("#save-auto-entry").click(function(){
         $(".overlay").show(); //if this doesn't show popup, goto 5-wake_up.html
     });
 });
-
+$("#back-to-entries").click(function(){
+    $(".overlay").show();
+    $(".overlay .yes-btn").click(function() {
+        window.location = "9-view_entries.html";
+    });
+    $(".overlay .no-btn").click(function () {
+        window.location = "9-view_entries.html";
+    });
+});
 $("#reset").click(function(){
     $(".overlay").show();
     $(".overlay .yes-btn").click(function() {
