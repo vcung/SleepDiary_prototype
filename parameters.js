@@ -18,12 +18,12 @@ var para = {
     data = [
      {'Bedtime': new Date(2015,2,15,23,30), 
      'Wakeup': new Date(2015,2,16,08,30), 
-     'Interrupt': ['00:10', '00:20'],
+     'Interrupt': ['00:10AM', '00:20AM'],
      'Rating': 4.3,
      'Comment': ''},
      {'Bedtime': new Date(2015,2,16,23,50), 
      'Wakeup':new Date(2015,2,17,08,40), 
-     'Interrupt': ['02:10'],
+     'Interrupt': ['02:10AM'],
      'Rating': 4.2,
      'Comment': 'I was plagued by nightmares'},
      {'Bedtime': new Date(2015,2,18,00,30), 
@@ -46,7 +46,7 @@ var para = {
 
      {'Bedtime': new Date(2015,2,20,23,20), 
      'Wakeup':new Date(2015,2,21,07,40), 
-     'Interrupt': ['02:10', '04:50'],
+     'Interrupt': ['02:10AM', '04:50AM'],
      'Rating': 3,
      'Comment': 'feel tired'},
 
@@ -83,36 +83,33 @@ var para = {
     current_entry = [
    ]
 
-//     //new Date(year, month, day, hours, minutes)
-//     data = [
-//      'e1': {'Date1': new Date(2015,2,15),
-//      'Date2': new Date(2015,2,16),
-//      'BedTime': new Date(2015,2,15,23,30),
-//      'Wakeup': new Date(2015,2,16,07,30),
-//      'Interrupt': [new Date(2015,2,16,05,3)],
-//      'Rating': 4,
-//      'Comment': 'say something...'},
-
-//      'e2': {'Date1': new Date(2015,2,16),
-//      'Date2': new Date(2015,2,17),
-//      'BedTime': new Date(2015,2,16,23,40),
-//      'Wakeup': new Date(2015,2,17,08,30),
-//      'Interrupt': [],
-//      'Rating': 4,
-//      'Comment': 'say something...'}
-//      ],
-//      current_entry = 'e2'
-
 function formatTime(d){
-    return d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) 
-    + ' ' + d.getHours() + ':' + d.getMinutes();
+    var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' ',
+        hours =  d.getHours(),
+        suffix = 'AM';
+        if(hours > 12){
+            suffix = 'PM'
+            hours = hours - 12
+        }
+     return tmp + hours + ':' + d.getMinutes() + suffix;
+}
+
+function getHoursTime(d){
+    var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' ',
+        hours =  d.getHours(),
+        suffix = 'AM';
+        if(hours > 12){
+            suffix = 'PM'
+            hours = hours - 12
+        }
+     return hours + ':' + d.getMinutes() + suffix;
 }
 
 function getHoursBetween (d1, d2) {
-
     var tmp = Math.abs(d1.getTime() - d2.getTime())
     return tmp / 36 /100000;
 }
+
 $(document).ready(function(){
 $("#back-save-custom").click(function(){
     $(".overlay").show();
@@ -127,6 +124,7 @@ $("#back-save-custom").click(function(){
 $(".sleep-bg").click(function () {
    $(".overlay").show();
 });
+
 $(".glyphicon-trash").click(function () {
    $(".overlay").show();
    var selected = $(this);
