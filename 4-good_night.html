@@ -11,39 +11,11 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
 <script src="parameters.js"></script>
-
-<!--<table align="center" class = 'headtitle'>
-    <tr class="sleep_dairy_title" align="center">
-        <td align="center" valign = 'bottom'>
-         <h1 class = 'fbig'>Sleep Dairy 
-         <a id = 'back' href = '2-main.html'>
-        <font class = 'fsmall' color = 'white'>back</font>
-         </a> </h1>       
-         </td>
-    </tr>
-</table>
-
-<table align="center">
-    <tr>
-        <td background = 'img/sleeping-cat.jpg' class = 'screen_td' align = 'center'>
-        <a href = '5-wake_up.html'>
-                <p class = 'fbig fcolor'> G' Night!</p>
-                <br>
-                <p class = 'fsmall fcolor'>Tap here when you wake up to record the time</p>
-                <br>
-        </a>
-        </td>
-    </tr>
-</table>
-<script>
-  d3.selectAll('.menu_2td')
--->
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Sleep Diary</a>
+      <a href="#" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
-      <a class="navbar-link back-btn" href="3-add_entry.html">Back</a>
   </div>
 </nav>
 
@@ -53,38 +25,21 @@
         <p class="text-center">Tap here when you wake up to record the time</p>
     </div>
     <div class="center-block sleep-btns overlay">
-      <a href="4-good_night.html" class="btn btn-default" role="button">Continue to Sleep</a>
-      <a href="6-auto_entry.html" class="btn btn-default" role="button">Get Up Now</a>
+      <a href="4-good_night.html" class="btn btn-default" role="button" id = 'cont'>Continue to Sleep</a>
+      <a href="6-auto_entry.html" class="btn btn-default" role="button" id = 'getup'>Get Up Now</a>
     </div>
 </div>
 <script>
   function directToWakeUp() {
     window.location = "5-wake_up.html";
   }
-  /*d3.selectAll('.menu_2td')
-     .attr('height', para.menu_2height)
-     .attr('width', para.menu_2width)
-     .attr('align', 'center')
-
-   d3.select('.headtitle')
-     .attr('width', para.head_width)
-     .attr('height', para.head_height)
-
-   d3.select('.screen_td')
-     .attr('width', para.head_width)
-     .attr('height', para.screen_height)
-    
-   d3.selectAll('.fcolor')
-     .style('color', 'white')
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
 
    d3.selectAll('.fmid')
-     .style('font-size', para.mid)
+   .style('font-size', para.fmid)
 
-   d3.selectAll('.fbig')
-     .style('font-size', para.big)
-
-   d3.selectAll('.fsmall')
-     .style('font-size', para.small)
-     .style('font-size', para.small)*/
+</script>
      
 </script></body></html>
