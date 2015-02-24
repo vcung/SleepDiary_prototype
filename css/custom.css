@@ -38,7 +38,7 @@ body {
 }
 .italicize {	font-style: italic;   }
 
-.fsmall { 	font-size: 0.8em;  }
+.fsmall { 	font-size: 0.7em;  }
 .flabel {font-weight: bold;}
 .clickable {
 	cursor: pointer;
@@ -107,6 +107,27 @@ body {
 	padding: 15px 15px;
 	line-height: 20px;
 }
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: #b3e2cd;
+  stroke-width: 1.5px;
+}
+
+.bar {
+  fill: #b3e2cd;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
 
 @media screen and (max-width: 768px) {
 .nav:before, .nav:after, .navbar:before, 
