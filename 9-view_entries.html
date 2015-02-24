@@ -51,12 +51,12 @@
 
    entry.append('p')
     .html(function(){
-    	return '<span class="flabel">Bedtime: </span>'+ d.Bedtime.Date + '  ' + d.Bedtime.Time
+    	return '<span class="flabel">Bedtime: </span>'+ formatTime(d.Bedtime)
     })
 
    entry.append('p')
     .html(function(){
-    	return '<span class="flabel">Wake up: </span>'+ d.Wakeup.Date + '   ' +  d.Wakeup.Time
+    	return '<span class="flabel">Wake up: </span>'+ formatTime(d.Wakeup)
     })
 
     entry.append('p')
@@ -82,5 +82,6 @@
     entry.append('hr')
 })
 </script>
+
 </body>
 </html>
