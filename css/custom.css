@@ -113,7 +113,7 @@ body {
 	line-height: 20px;
 }
 
-.axis path, .axis line {
+.axis path, .axis line{
   fill: none;
   stroke: #ddd;
   shape-rendering: crispEdges;
@@ -136,8 +136,12 @@ body {
 .glyphicon {
   font-size: 19px;
   padding-left: 10px;
+  color:#000;
 }
 
+.glyphicon-pencil{
+	color:#000;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]  {
