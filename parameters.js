@@ -39,16 +39,10 @@ var para = {
      'Comment': ''},
 
      {'Bedtime': new Date(2015,2,19,23,55), 
-     'Wakeup':new Date(2015,2,20,09,20), 
+     'Wakeup':new Date(2015,2,20,08,20), 
      'Interrupt': [],
      'Rating': 4.8,
      'Comment': 'milk'},
-
-     {'Bedtime': new Date(2015,2,20,23,20), 
-     'Wakeup':new Date(2015,2,21,07,40), 
-     'Interrupt': ['02:10AM', '04:50AM'],
-     'Rating': 3,
-     'Comment': 'feel tired'},
 
       {'Bedtime': new Date(2015,2,21,01,40), 
      'Wakeup':new Date(2015,2,21,06,10), 
@@ -56,8 +50,8 @@ var para = {
      'Rating': 2.1,
      'Comment': 'dead'},
 
-      {'Bedtime': new Date(2015,2,21,23,15), 
-     'Wakeup':new Date(2015,2,22,08,10), 
+      {'Bedtime': new Date(2015,2,22,00,15), 
+     'Wakeup':new Date(2015,2,22,05,10), 
      'Interrupt': [],
      'Rating': 3,
      'Comment': 'dead'},
@@ -67,21 +61,29 @@ var para = {
      'Interrupt': [],
      'Rating': 4,
      'Comment': ''},
-
-     {'Bedtime': new Date(2015,2,24,00,40), 
+      
+      {'Bedtime': new Date(2015,2,23,23,20), 
      'Wakeup':new Date(2015,2,24,09,10), 
+     'Interrupt': [],
+     'Rating': 3.5,
+     'Comment': ''},
+
+     {'Bedtime': new Date(2015,2,25,00,40), 
+     'Wakeup':new Date(2015,2,25,09,10), 
      'Interrupt': [],
      'Rating': 4.1,
      'Comment': ''},
 
      {'Bedtime': new Date(2015,2,25,23,50), 
-     'Wakeup':new Date(2015,2,26,08,20), 
+     'Wakeup':new Date(2015,2,26,09,20), 
      'Interrupt': [],
-     'Rating': 5.3,
+     'Rating': 4.3,
      'Comment': ''}
     ],
     current_entry = [
-   ]
+   ],
+   hashMon = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+
 
 function formatDate(d){
     var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' '
@@ -89,7 +91,7 @@ function formatDate(d){
 }
 
 function formatTime(d){
-    var tmp = d.getMonth() + '-' + d.getDate() + '-' + (d.getYear() + (2015 - 115)) + ' ',
+    var tmp = hashMon[d.getMonth() - 1]+ '. ' + d.getDate() + ' ' + (d.getYear() + (2015 - 115)) + ', ',
         hours =  d.getHours(),
         suffix = 'AM';
         if(hours > 12){
