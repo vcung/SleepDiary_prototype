@@ -138,6 +138,14 @@ body {
   padding-left: 10px;
 }
 
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]  {
+	padding: 5px;
+	max-width: 140px;
+}
+}
+
 @media screen and (max-width: 768px) {
 .nav:before, .nav:after, .navbar:before, 
 .navbar:after, .navbar-header:before, 
