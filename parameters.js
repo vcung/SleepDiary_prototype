@@ -1,4 +1,5 @@
-var para = {
+var test = 1,
+    para = {
     'fhead' : '25px',
     'fbig': '20px',
     'fmid': '18px',
