@@ -23,7 +23,7 @@
   <div class="container">
   	<p>Select time range:</p>
   	<table>
-      <tr>
+    <tr>
       <td>
   	    	<div class="form-group" >
 			    <label for="date">From:</label>
@@ -31,30 +31,38 @@
 	    	  </div>
       </td>
        
-       <td width = '10px'>
+       <td width = '10%'>
        </td>
 
-       <td>
+      <td>
 		     <div class="form-group">
 		    	<label for="date">To:</label>
 			    <input id="to-date" type="date" class="form-control" value = '2015-02-28'>
-		    </div>
-	  </div>
-    </td>
+		     </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+      <br>
+      <div class="text-right">
+      <a href="8-analyze_sleep.html" type="button" class="btn btn-default">Analyze</a>
+      </div>
+      </td>
     </tr>
 	</table>
 </div>
-  <br>
-  <div class="text-center">
-    <a href="8-analyze_sleep.html" type="button" class="btn btn-lg btn-default">Analyze</a>
-  </div>
+
+ 
 
 <script type="text/javascript">   
 d3.select('.head_label')
    .style('font-size', para.fhead)
    .style('line-height', '100%')
 
-console.log(tmp)
 </script>
 </body>
 </html>
