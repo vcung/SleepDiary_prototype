@@ -71,6 +71,9 @@ a.navbar-brand:visited {
 	position: relative;
 	display: none;
 }
+.overlay.relative {
+	position: fixed;
+}
 .sleep-bg {
 	background: url("../img/sleeping-cat.jpg") 50%;
 	background-size: 180%;
@@ -103,7 +106,7 @@ a.navbar-brand:visited {
 	padding: 20px;
 	text-align: center;
 	border: 1px solid #000;
-	position: absolute;
+	position: fixed;
 	top:200px;
 	left: 0;
 	right: 0;
