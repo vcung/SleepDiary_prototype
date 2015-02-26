@@ -7,17 +7,17 @@
 </head>
 <body>
     
-<script src="js/jquery-1.11.2.min.js"></script>
+<!--script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
-<script src="parameters.js"></script>
+<script src="parameters.js"></script-->
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="2-main.html" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
-      <a class="navbar-link back-btn" href="7-select_time.html">Back</a>
+      <a class="navbar-link back-btn">Back</a>
   </div>
 </nav>
 <div class="container fsmall" >
@@ -31,6 +31,30 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+d3.selectAll('.navbar-brand')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('2-main.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+d3.selectAll('.back-btn')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('7-select_time.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+</script>
+
 <script type="text/javascript">
     var margin = {top: 30, right: 30, bottom: 50, left: 25},
     width = 310 - margin.left - margin.right,
@@ -44,11 +68,13 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom");
+    .orient("bottom")
+    .ticks(d3.time.day, 1);
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left");
+    .orient("left")
+   
 
 var line = d3.svg.line()
     .x(function(d) { return x(d.Wakeup); })
@@ -60,8 +86,8 @@ var svg = d3.select("#linechart").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  x.domain([d3.min(data.map(function(d) { return d.Bedtime; })), d3.max(data.map(function(d) { return d.Wakeup; }))]);
-  y.domain([0, d3.max(data.map(function(d) { return d.Rating; }))]);
+  x.domain([d3.min(sub_data.map(function(d) { return d.Bedtime; })), d3.max(sub_data.map(function(d) { return d.Wakeup; }))]);
+  y.domain([0, d3.max(sub_data.map(function(d) { return d.Rating; }))]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -85,7 +111,7 @@ var svg = d3.select("#linechart").append("svg")
       .style("text-anchor", "end")
 
   svg.append("path")
-      .datum(data)
+      .datum(sub_data)
       .attr("class", "line")
       .attr("d", line);
 </script>
@@ -103,7 +129,8 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom");
+    .orient("bottom")
+    .ticks(d3.time.day, 1);
 
 var yAxis = d3.svg.axis()
     .scale(y)
@@ -119,8 +146,8 @@ var svg = d3.select("#barchart").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    x.domain([d3.min(data.map(function(d) { return d.Bedtime; })), d3.max(data.map(function(d) { return d.Wakeup; }))]);
-  y.domain([0, d3.max(data.map(function(d) {return getHoursBetween(d.Wakeup, d.Bedtime); }))]);
+    x.domain([d3.min(sub_data.map(function(d) { return d.Bedtime; })), d3.max(sub_data.map(function(d) { return d.Wakeup; }))]);
+  y.domain([0, d3.max(sub_data.map(function(d) {return getHoursBetween(d.Wakeup, d.Bedtime); }))]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -145,7 +172,7 @@ var svg = d3.select("#barchart").append("svg")
 
 
   svg.selectAll(".bar")
-      .data(data)
+      .data(sub_data)
     .enter().append("rect")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.Wakeup) ; })
@@ -160,7 +187,7 @@ var width = 310,
     height = 250,
     radius = Math.min(width, height) / 2;
 
-var hours = data.map(function(d){
+var hours = sub_data.map(function(d){
     return getHoursBetween(d.Wakeup, d.Bedtime);
 })
 
@@ -211,8 +238,8 @@ var svg = d3.select("body").append("svg")
          return "translate(" + arc.centroid(d) + ")";})
     .attr("text-anchor", "middle")
     .text(function(d, i) {
-         var per = stat[i].index / data.length
-         return '>' + stat[i].hrs + "h, " + per.toFixed(2) * 100 + '%';})
+         var per = stat[i].index / sub_data.length
+         return '>' + stat[i].hrs + "h, " + Math.round(per.toFixed(2) * 100) + '%';})
     .attr('class', 'fsmall');
 
 </script>
