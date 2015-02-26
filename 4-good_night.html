@@ -7,14 +7,16 @@
 </head>
 <body>
     
-<script src="js/jquery-1.11.2.min.js"></script>
+<!--script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
-<script src="parameters.js"></script>
+<script src="parameters.js"></script-->
+<!-- All js got ran in first html-->
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="2-main.html" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
   </div>
 </nav>
@@ -25,14 +27,58 @@
         <p class="text-center">Tap here when you wake up to record the time</p>
     </div>
     <div class="center-block sleep-btns overlay">
-      <a href="4-good_night.html" class="btn btn-default btn-lg" role="button" id = 'cont'>Continue to Sleep</a>
-      <a href="6-auto_entry.html" class="btn btn-default btn-lg" role="button" id = 'getup'>Get Up Now</a>
+      <!--a href="4-good_night.html" class="btn btn-default" role="button" id = 'cont'>Continue to Sleep</a-->
+      
+      <a class="btn btn-default" role="button" id = 'cont_sleep'>Continue to Sleep</a>
+
+      <!--a href="6-auto_entry.html" class="btn btn-default" role="button" id = 'getup'>Get Up Now</a-->
+
+      <a class="btn btn-default" role="button" id = 'get_up'>Get Up Now</a>
+
     </div>
 </div>
+
 <script>
+
+  /* rm this later
+   * fm: this was in parameters.js
+   */
+  $(".sleep-bg").click(function () {
+     $(".overlay").show();
+  });
+
   function directToWakeUp() {
     window.location = "5-wake_up.html";
   }
+
+   // point the continue to sleep button to 4-good_night.html page
+   d3.select('#cont_sleep')
+   .on('click', function() {
+      d3.select('body').html(''); // clean
+
+      d3.html('4-good_night.html', function(err, d) {
+          if(err){
+            console.log('Oops. Good night died.')
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   // point the get up now button to 6-auto_entry.html page
+   d3.select('#get_up')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('6-auto_entry.html', function(err, d) {
+          if(err){
+            console.log(err);
+            console.log('Oops. auto_entry died.')
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
    d3.select('.head_label')
    .style('font-size', para.fhead)
    .style('line-height', '100%')
