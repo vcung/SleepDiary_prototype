@@ -16,27 +16,66 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
-      <a class="navbar-link back-btn" href="2-main.html">Back</a>
+      <a class="navbar-link back-btn">Back</a>
   </div>
 </nav>
 
 <div class="container">
     <div class="center-block sleep-btns half-screen">
-      <a href="6-auto_entry.html" class="btn btn-default" role="button">
+     
+      <!--a href="6-auto_entry.html" class="btn btn-default" role="button">
         <p class = 'fmid'>Custom Entry</p>
-          <p class = 'fsmall italicize'>type in yourself</p>
+        <p class = 'fsmall italicize'>type in yourself</p>
+      </a-->
+
+      <a id = "custom_entry" class="btn btn-default" role="button">
+        <p class = 'fmid'>Custom Entry</p>
+        <p class = 'fsmall italicize'>type in yourself</p>
       </a>
-      <a href="4-good_night.html" class="btn btn-default" role="button">
+
+      <!--a href="4-good_night.html" class="btn btn-default" role="button">
         <p class = 'fmid'>Sleep Now</p>
-        <p class="fsmall italicize">record for you</p></a>
+        <p class="fsmall italicize">record for you</p></a-->
+
+      <a id = "sleep_now" class="btn btn-default" role="button">
+        <p class = 'fmid'>Sleep Now</p>
+        <p class="fsmall italicize">record for you</p>
+      </a>
+
    </div>
 </div>
 
 <!--script src="parameters.js"></script-->
+<script src="common_code.js"></script>
 <script>
-   console.log(test)
+   // console.log(test)
+
+   // should be able to do in JQuery, but I don't know how...
+
+   // point the custom entry button to 6-auto_entry.html page
+   d3.select('#custom_entry')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('6-auto_entry.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   // point the sleep now  button to 4-good_night.html page
+   d3.select('#sleep_now')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('4-good_night.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
    d3.select('.head_label')
    .style('font-size', para.fhead)
    .style('line-height', '100%')
