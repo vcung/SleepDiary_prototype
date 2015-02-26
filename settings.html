@@ -51,11 +51,10 @@
   $("#reset").click(function(){
     $(".overlay").show();
     $(".overlay .yes-btn").click(function() {
-    	data = [];
+    	  data = [];
         d3.select('body').html('');
         d3.html('2-main.html', function(err, d) {
           if(err){
-            console.log('Oops. yup died.')
             console.log(err);
           }
         d3.select('body').node().appendChild(d);
@@ -111,7 +110,6 @@
        d3.selectAll('.layout')
        .attr('class', 'btn btn-default btn-block layout')
    }else{
-   	console.log('HIII')
    	   d3.selectAll('.layout')
        .attr('class', 'btn btn-default btn-block btn-sm layout')
    }
