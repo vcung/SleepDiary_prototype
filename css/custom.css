@@ -18,6 +18,12 @@ body {
 	color: #08306b;	
 	font-weight: bold;
 }
+
+a.navbar-brand:visited {
+	color: #08306b;	
+	font-weight: bold;
+}
+
 .float-right {
 	float: right;
 }
