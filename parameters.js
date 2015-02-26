@@ -4,7 +4,7 @@ var test = 1,
     'fbig': '20px',
     'fmid': '18px',
     'fsmall': '8px',
-    'layout': 'cozy'
+    'layout': 'standard'
     },
     motto = [
     'Sleeping is no mean art: for its sake one must stay awake all day. ~Friedrich Nietzsche',
