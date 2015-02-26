@@ -50,8 +50,10 @@
 
   $("#reset").click(function(){
     $(".overlay").show();
-    $(".overlay .yes-btn").click(function() {
-    	  data = [];
+   });
+
+  $(".yes-btn").click(function() {
+        data = [];
         d3.select('body').html('');
         d3.html('2-main.html', function(err, d) {
           if(err){
@@ -60,10 +62,10 @@
         d3.select('body').node().appendChild(d);
       });
     });
-    $(".overlay .no-btn").click(function () {
+
+    $(".no-btn").click(function() {
         $(".overlay").hide();
     });
-   });
 
    d3.select('#standard')
    .on('click', function() {
