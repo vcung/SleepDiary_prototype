@@ -7,17 +7,17 @@
 </head>
 <body>
     
-<script src="js/jquery-1.11.2.min.js"></script>
+<!--script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.v3.min.js"></script>
-<script src="parameters.js"></script>
+<script src="parameters.js"></script-->
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="2-main.html" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
-      <a class="navbar-link back-btn" href="2-main.html">Back</a>
+      <a class="navbar-link back-btn">Back</a>
   </div>
 </nav>
   <div class="container">
@@ -49,16 +49,43 @@
       <td>
       <br>
       <div class="text-right">
-      <a href="8-analyze_sleep.html" type="button" class="btn btn-default">Analyze</a>
+      <!-- a href="8-analyze_sleep.html" type="button" class="btn btn-default">Analyze</a-->
+      <a id="analyze" type="button" class="btn btn-default">Analyze</a>
       </div>
       </td>
     </tr>
 	</table>
 </div>
 
- 
-
+<script src="common_code.js"></script>
 <script type="text/javascript">   
+
+ // point the analyze button to 8-analyze_sleep.html page
+   d3.select('#analyze')
+   .on('click', function() {
+
+      var fromVal = $('#from-date').val(),
+          from = new Date(fromVal),
+          toVal = $('#to-date').val(),
+          to = new Date(toVal)
+
+      sub_data = data.filter(function(d, i){  
+        if(d.Bedtime - from >= 0&& d.Wakeup - to <= 0)
+          return true
+        else
+          return false
+      })
+
+      d3.select('body').html('');
+
+      d3.html('8-analyze_sleep.html', function(err, d) {
+          if(err){
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
 d3.select('.head_label')
    .style('font-size', para.fhead)
    .style('line-height', '100%')
