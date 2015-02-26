@@ -27,6 +27,7 @@ var test = 1,
      'Interrupt': ['02:10AM'],
      'Rating': 4.2,
      'Comment': 'I was plagued by nightmares'},
+     
      {'Bedtime': new Date(2015,2,18,00,30), 
      'Wakeup':new Date(2015,2,18,09,30), 
      'Interrupt': [],
