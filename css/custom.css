@@ -152,6 +152,10 @@ a.navbar-brand:visited {
 	color:#000;
 }
 
+.star-rating.rating-xs {
+	display:inline-block;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]  {
 	padding: 5px;
