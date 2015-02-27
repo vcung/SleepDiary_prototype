@@ -121,7 +121,9 @@
 
  $(".back-to-entries").click(function(){
     $(".overlay").show();
-    $(".overlay .yes-btn").click(function() {
+ });
+
+   $(".overlay .yes-btn").click(function() {
        save();
    });
    $(".overlay .no-btn").click(function () {
@@ -129,14 +131,11 @@
 
         d3.html('9-view_entries.html', function(err, d) {
           if(err){
-            console.log('Oops. nope died.')
             console.log(err);
           }
         d3.select('body').node().appendChild(d);
       });
     });
-});
-
 
 
    if(current_entry != -1){

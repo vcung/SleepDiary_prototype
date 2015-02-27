@@ -111,6 +111,8 @@
 
    $(".save-auto-entry").click(function(){
     $(".overlay").show();
+  });
+
     $(".overlay .yes-btn").click(function() {
         save();
     });
@@ -125,7 +127,6 @@
           d3.select('body').node().appendChild(d);
       });
     });
-});
     
    // point the save button to 9-view_entries.html page
    d3.select('#save')
