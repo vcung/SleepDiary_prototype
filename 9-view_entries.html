@@ -109,11 +109,13 @@
                 .html(function() {
                     return '<span class="rg-text flabel">Bedtime: </span>' + formatTime(d.Bedtime)
                 })
+                .attr('class' , 'rg-text')
 
             entry.append('p')
                 .html(function() {
                     return '<span class="rg-text flabel">Wake up: </span>' + formatTime(d.Wakeup)
                 })
+                .attr('class' , 'rg-text')
 
             entry.append('p')
                 .html(function() {
@@ -143,10 +145,10 @@
 
      if(para.layout === 'cozy'){
         d3.selectAll('.rg-text')
-        .style('line-height', '90%')
+        .style('line-height', '80%')
      }else{
         d3.selectAll('.rg-text')
-          .style('line-height', '150%')
+        .style('line-height', '150%')
       }
     </script>
 
