@@ -88,16 +88,17 @@
          comment = $('#comments').val()
 
   	 var entry = 
-  	 {'Bedtime': bed, 
+  	 [{'Bedtime': bed, 
      'Wakeup': wake, 
      'Interrupt': interrupts,
      'Rating': +rating,
      'Comment': comment
-    }
+    }]
      
     // console.log(JSON.stringify(entry))
-
-     data.push(entry)
+      
+      //data.push(entry)
+      data = entry.concat(data)
       d3.select('body').html('');
 
       d3.html('9-view_entries.html', function(err, d) {

@@ -101,11 +101,23 @@ var test = 1,
      'Wakeup':new Date("Feb 26, 2015 07:40:00"), 
      'Interrupt': [],
      'Rating': 4.3,
+     'Comment': ''},
+
+     {'Bedtime': new Date("Feb 26, 2015 23:10:00"), 
+     'Wakeup':new Date("Feb 27, 2015 06:40:00"), 
+     'Interrupt': ['01:01'],
+     'Rating': 3.9,
      'Comment': ''}
     ],
     current_entry = [
    ],
    hashMon = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+
+
+/******************************
+ * reverse the order of entries
+ *******************************/
+data.reverse();
 
 function makeADate(date, hrs){
     var arrDate = date.split('-'),
