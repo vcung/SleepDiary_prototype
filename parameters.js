@@ -105,7 +105,7 @@ var test = 1,
 
      {'Bedtime': new Date("Feb 26, 2015 23:10:00"), 
      'Wakeup':new Date("Feb 27, 2015 06:40:00"), 
-     'Interrupt': ['01:01'],
+     'Interrupt': ['01:15'],
      'Rating': 3.9,
      'Comment': ''}
     ],
