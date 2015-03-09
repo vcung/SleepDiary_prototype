@@ -18,6 +18,7 @@
     <div class="navbar-header">
       <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
     </div>
+      <a class="navbar-link back-btn giveup-entry">Back</a>
   </div>
 </nav>
 
@@ -27,25 +28,47 @@
         <p class="text-center">Tap here when you wake up to record the time</p>
     </div>
     <div class="center-block sleep-btns overlay">
-      <!--a href="4-good_night.html" class="btn btn-default" role="button" id = 'cont'>Continue to Sleep</a-->
-      
       <a class="btn btn-default" role="button" id = 'cont_sleep'>Continue to Sleep</a>
-
-      <!--a href="6-auto_entry.html" class="btn btn-default" role="button" id = 'getup'>Get Up Now</a-->
-
       <a class="btn btn-default" role="button" id = 'get_up'>Get Up Now</a>
 
     </div>
-</div>
+</div>    <div class="center-block yesno-btns overlay-save">
+     <p>Go back will give up this entry. <br> Continue to back up?</p>
+      <a id = "nope" class="no-btn btn btn-default" role="button">Nope</a>
+      <a id = "yup" class="yes-btn btn btn-default save" role="button">Yup</a>
+     </div>
 
 <script>
 
   /* rm this later
    * fm: this was in parameters.js
    */
-  $(".sleep-bg").click(function () {
-     $(".overlay").show();
+
+  $(".overlay-save").hide(); 
+
+  $(".giveup-entry").click(function(){
+    $(".overlay-save").show();
   });
+
+    $(".overlay-save .yes-btn").click(function() {
+        d3.select('body').html('');
+
+        d3.html('3-add_entry.html', function(err, d) {
+          if(err){
+            console.log('Oops. nope died.')
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+    $(".overlay-save .no-btn").click(function () {
+       $(".overlay-save ").hide();
+    });
+
+    $(".sleep-bg").click(function() {
+       $(".overlay").show();
+    });
 
   function directToWakeUp() {
     window.location = "5-wake_up.html";
