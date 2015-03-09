@@ -113,6 +113,7 @@ var test = 1,
    ],
    hashMon = ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 
+para.fsmall = Math.floor(window.width / 100) + 'px';
 
 /******************************
  * reverse the order of entries
