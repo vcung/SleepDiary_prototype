@@ -165,7 +165,7 @@ function formatTimeOnly(d){
             hours = hours - 12
         }
         hoursStr = hours < 10 ? '0' + hours : hours
-        minStr = arr[1] < 10 ? '0' + arr[1] : arr[1]
+        minStr = (+arr[1]) < 10 ? ('0' + (+arr[1])) : (arr[1])
      return hoursStr + ':' + minStr + ' ' + suffix;
 }
 
