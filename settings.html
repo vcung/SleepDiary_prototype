@@ -31,16 +31,17 @@
 			<td class = 'standard'><a id = 'standard' class="layout btn btn-default" role = 'button'><p class = 'standard'>Standard</p></a></td>
 			<td width = '5%'>
 			</td>
-			<td class = 'cozy'><a id = 'cozy' class="layout btn btn-default " role = 'button'><p class = 'cozy'>Cozy</p></a></td>
+			<td class = 'cozy'><a id = 'cozy' class="layout btn btn-default" role = 'button'><p class = 'cozy'>Cozy</p></a></td>
 		    </tr>
 	    </table>
 		<br>
 		<hr>
-		<a id="reset" class="btn btn-default fsmall red center-block"><p>Delete all entries and set the layout default</p></a>
+      <a id="reset" class="btn btn-default red center-block"><p>Reset</p></a>
+      <p class=" italicize" align = 'center'><strong>Delete all entries</strong> and set the  <strong>layout to default</strong></p>
 
 	</div>
 	<div class="center-block yesno-btns overlay">
-		<p>Are you sure you want to delete all entries and set the layout to default?</p>
+		<p>Are you sure you want to <font class = 'fred'> <strong>delete all entries </strong></font> and set  <strong> <font class = 'fred'>the layout to default?</font> </strong></p>
 		<a id = 'nope' class="no-btn btn btn-default" role="button">Nope</a>
 		<a id = 'yup' class="yes-btn btn btn-default" role="button">Yup</a>
 	</div>
@@ -54,7 +55,7 @@
 
   $(".yes-btn").click(function() {
         data = [];
-        para.layout = 'standard'.
+        para.layout = 'standard';
         d3.select('body').html('');
         d3.html('2-main.html', function(err, d) {
           if(err){
@@ -108,6 +109,12 @@
 
    d3.selectAll('.red')
    .style('background', '#fb8072')
+
+   // d3.selectAll('.fblue')
+   // .style('color', '#80b1d3')
+
+  d3.selectAll('.fred')
+   .style('color', '#fb8072')
 
    if(para.layout == 'standard'){
        d3.selectAll('.layout')
