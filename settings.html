@@ -36,10 +36,11 @@
 	    </table>
 		<br>
 		<hr>
-		<a id="reset" class="btn btn-default red center-block"><p>Delete all entries</p></a>
+		<a id="reset" class="btn btn-default fsmall red center-block"><p>Delete all entries and set the layout default</p></a>
+
 	</div>
 	<div class="center-block yesno-btns overlay">
-		<p>Are you sure you want to delete all entries?</p>
+		<p>Are you sure you want to delete all entries and set the layout to default?</p>
 		<a id = 'nope' class="no-btn btn btn-default" role="button">Nope</a>
 		<a id = 'yup' class="yes-btn btn btn-default" role="button">Yup</a>
 	</div>
@@ -53,6 +54,7 @@
 
   $(".yes-btn").click(function() {
         data = [];
+        para.layout = 'standard'.
         d3.select('body').html('');
         d3.html('2-main.html', function(err, d) {
           if(err){
