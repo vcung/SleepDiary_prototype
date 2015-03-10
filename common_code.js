@@ -18,9 +18,9 @@
       });
     });
 
-$("#cozy").click(function() {
-    $('body').addClass('cozy-theme');
-});
-$("#standard").click(function() {
-    $('body').removeClass('cozy-theme');
-});
+// $("#cozy").click(function() {
+//     $('body').addClass('cozy-theme');
+// });
+// $("#standard").click(function() {
+//     $('body').removeClass('cozy-theme');
+// });
