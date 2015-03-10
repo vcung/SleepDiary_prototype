@@ -100,9 +100,9 @@
 
    d3.selectAll('.menu_label')
     .style('line-height', function(){
-          if(para.layout === 'standard'){
+          if(para.layout === 'standard' || para.layout === 'night'){
             //console.log('standard')
-            return '180%'
+            return '150%'
           }
           else if(para.layout === 'cozy'){
             //console.log('cozy')
