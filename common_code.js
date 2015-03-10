@@ -17,3 +17,10 @@
           d3.select('body').node().appendChild(d);
       });
     });
+
+$("#cozy").click(function() {
+    $('body').addClass('cozy-theme');
+});
+$("#standard").click(function() {
+    $('body').removeClass('cozy-theme');
+});
