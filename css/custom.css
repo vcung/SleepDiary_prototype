@@ -183,7 +183,7 @@ body.cozy-theme {
 	background: #7D8A2E; 
 }
 
-body.night-theme, .night-theme textarea{
+body.night-theme, .night-theme textarea, .night-theme .overlay{
 	background: #193441;
 	color: #91AA9D;
 }
