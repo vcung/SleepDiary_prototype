@@ -44,7 +44,7 @@
 
 	</div>
 	<div class="center-block yesno-btns overlay">
-		<p><img src = "/img/alert-red.png" vertical-center = 'center' align = 'left' width = '30'/>Continue to<font class = 'fred'> <strong>delete</strong></font> all entries  and set   the layout to <font class = 'fred'><strong>default?</strong></font> </p>
+		<p><img src = "/img/alert-red.png" vertical-center = 'center' align = 'left' width = '30'/>Continue to<font class = 'fred'> <strong>delete</strong></font> all entries and set the looklike to <font class = 'fred'><strong>default?</strong></font> </p>
 		<a id = 'nope' class="no-btn btn btn-default" role="button">Nope</a>
 		<a id = 'yup' class="yes-btn btn btn-default" role="button">Yup</a>
 	</div>
@@ -59,7 +59,7 @@
   $(".yes-btn").click(function() {
         $('body').removeClass('cozy-theme');
         data = [];
-        para.layout = 'standard';
+        standard();
         d3.select('body').html('');
         d3.html('2-main.html', function(err, d) {
           if(err){
@@ -73,8 +73,8 @@
         $(".overlay").hide();
     });
 
-   d3.select('#standard')
-   .on('click', function() {
+
+  function standard(){
        para.layout = 'standard'
 
        d3.selectAll('.standard')
@@ -89,7 +89,13 @@
        d3.selectAll('.layout')
          .attr('class', 'btn btn-default layout')
 
-        d3.select('body').attr('class', 'stand-theme');
+       d3.select('body').attr('class', 'stand-theme');
+  }
+
+
+   d3.select('#standard')
+   .on('click', function() {
+       standard();
     });
 
    d3.select('#cozy')
