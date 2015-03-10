@@ -7,7 +7,9 @@
     /*background: -moz-linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* For Firefox 3.6 to 15 */
     /*background: linear-gradient(#f7fbff,#deebf7,#c6dbef,#9ecae1,#6baed6,#4292c6,#2171b5,#08519c,#08306b); /* Standard syntax */
 /*}*/
-
+p{
+	font-size: 0.9em;
+}
 #id{
 	color:#ffffff;
 }
@@ -168,11 +170,11 @@ body.cozy-theme {
 	background: #FFFeF1;
 	color: #8C4646;
 }
-.cozy-theme .navbar p{
+.cozy-theme .navbar p, .cozy-theme .glyphicon{
 	color: #8C4646;
 }
 .cozy-theme .btn-default, .cozy-theme .btn{
-	background: #FF95a8; 
+	background: #FFa5a8; 
 } 
 .cozy-theme .btn .fred{
 	background: #FA533E; 
@@ -181,11 +183,28 @@ body.cozy-theme {
 	background: #7D8A2E; 
 }
 
+body.night-theme, .night-theme textarea{
+	background: #193441;
+	color: #91AA9D;
+}
+.night-theme .navbar p, .night-theme .glyphicon{
+	color: #91AA9D;
+}
+.night-theme .btn-default, .night-theme .btn{
+	background: #3E606F; 
+}
+.night-theme .bred{
+	background: #FFC0A9; 
+}
+.night-theme .btn .fred{
+	color: #EB7F00; 
+}
+
 body.stand-theme {
 	background: #F6FeFF;
 	color: #2C3E50;
 }
-.stand-theme .navbar p{
+.stand-theme .navbar p, .stand-theme .glyphicon{
 	color: #2C3E50;
 }
 .stand-theme .btn-default, .stand-theme .btn{
@@ -197,6 +216,7 @@ body.stand-theme {
 .stand-theme .btn .fred{
 	color: #EB7F00; 
 }
+
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]  {
