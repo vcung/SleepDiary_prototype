@@ -31,7 +31,7 @@
         <div class="sm-screen center-block" id='entryplace'>
         </div>
         <div class="center-block yesno-btns overlay">
-            <p>Are you sure you want to delete this entry?</p>
+            <p><img src = "/img/alert.png" vertical-center = 'center' align = 'left' width = '30'/>Are you sure you want to delete this entry?</p>
             <!--a href="#" class="no-btn btn btn-default" role="button">Nope</a>
     <a href="#" class="yes-btn btn btn-default" role="button">Yup</a-->
             <a id="nope" class="no-btn btn btn-default" role="button">Nope</a>
@@ -117,18 +117,18 @@
                 })
                 .attr('class' , 'rg-text')
 
-            entry.append('p')
-                .html(function() {
-                    var arr = d.Interrupt,
-                        target = ''
-                    arr.forEach(function(k, i) {
-                        if (i < arr.length - 1)
-                            target += formatTimeOnly(k) + ', ';
-                        else
-                            target += formatTimeOnly(k)
-                    })
-                    return '<span class="rg-text flabel">Interrupt: </span>' + target
-                })
+            // entry.append('p')
+            //     .html(function() {
+            //         var arr = d.Interrupt,
+            //             target = ''
+            //         arr.forEach(function(k, i) {
+            //             if (i < arr.length - 1)
+            //                 target += formatTimeOnly(k) + ', ';
+            //             else
+            //                 target += formatTimeOnly(k)
+            //         })
+            //         return '<span class="rg-text flabel">Interrupt: </span>' + target
+            //     })
 
             entry.append('p')
                 .html(function() {
