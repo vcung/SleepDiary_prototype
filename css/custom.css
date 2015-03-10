@@ -163,12 +163,39 @@ a.navbar-brand:visited {
 }
 
 /**COZY LAYOUT**/
+
 body.cozy-theme {
-	background: #FFF9F5;
-	color: #936d54;
+	background: #FFFeF1;
+	color: #8C4646;
 }
-.cozy-theme .btn-default, .cozy-theme .btn {
-	background: #D1A5AB; 
+.cozy-theme .navbar p{
+	color: #8C4646;
+}
+.cozy-theme .btn-default, .cozy-theme .btn{
+	background: #FF95a8; 
+} 
+.cozy-theme .btn .fred{
+	background: #FA533E; 
+}
+.cozy-theme .bred{
+	background: #7D8A2E; 
+}
+
+body.stand-theme {
+	background: #F6FeFF;
+	color: #2C3E50;
+}
+.stand-theme .navbar p{
+	color: #2C3E50;
+}
+.stand-theme .btn-default, .stand-theme .btn{
+	background: #6DBCDB; 
+}
+.stand-theme .bred{
+	background: #EB7F33; 
+}
+.stand-theme .btn .fred{
+	color: #EB7F00; 
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
