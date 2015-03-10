@@ -12,7 +12,7 @@
 	color:#ffffff;
 }
 body {
-	font-size: 14px;
+	font-size: 15px;
 }
 .navbar-default .navbar-brand {
 	color: #08306b;	
@@ -160,6 +160,15 @@ a.navbar-brand:visited {
 
 .star-rating.rating-xs {
 	display:inline-block;
+}
+
+/**COZY LAYOUT**/
+body.cozy-theme {
+	background: #FFF9F5;
+	color: #936d54;
+}
+.cozy-theme .btn-default, .cozy-theme .btn {
+	background: #D1A5AB; 
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

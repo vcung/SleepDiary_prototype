@@ -24,7 +24,7 @@
   </div>
 </nav>
 <div class="container">
-	<div class="sm-screen">
+	<div class="center-block sm-screen">
 		<table>
 			<tr>
 			<td><p>Layout:</p></td>
@@ -54,6 +54,7 @@
    });
 
   $(".yes-btn").click(function() {
+        $('body').removeClass('cozy-theme');
         data = [];
         para.layout = 'standard';
         d3.select('body').html('');
@@ -100,6 +101,7 @@
    d3.select('.head_label')
    .style('font-size', para.fhead)
    .style('line-height', '100%')
+   .style('margin', 0)
 
    d3.select('.' + para.layout)
    .style('text-decoration', 'underline')
