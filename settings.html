@@ -32,7 +32,10 @@
 			<td width = '5%'>
 			</td>
 			<td class = 'cozy'><a id = 'cozy' class="layout btn btn-default" role = 'button'><p class = 'cozy'>Cozy</p></a></td>
-		    </tr>
+      <td width = '5%'>
+      </td>
+      <td class = 'night'><a id = 'night' class="layout btn btn-default" role = 'button'><p class = 'cozy'>Night</p></a></td>
+		  </tr>
 	    </table>
 		<br>
 		<hr>
@@ -77,6 +80,9 @@
        d3.selectAll('.standard')
         .style('text-decoration', 'underline')
        
+       d3.selectAll('.night')
+        .style('text-decoration', 'none')
+
        d3.selectAll('.cozy')
          .style('text-decoration', 'none')
 
@@ -96,10 +102,32 @@
         d3.selectAll('.standard')
         .style('text-decoration', 'none')
 
+        d3.selectAll('.night')
+        .style('text-decoration', 'none')
+
         d3.selectAll('.layout')
          .attr('class', 'btn btn-default layout btn-sm')
 
          d3.select('body').attr('class', 'cozy-theme');
+    });
+
+   d3.select('#night')
+   .on('click', function() {
+       para.layout = 'night'
+
+       d3.selectAll('.night')
+        .style('text-decoration', 'underline')
+       
+       d3.selectAll('.cozy')
+         .style('text-decoration', 'none')
+
+       d3.selectAll('.standard')
+         .style('text-decoration', 'none')
+
+       d3.selectAll('.layout')
+         .attr('class', 'btn btn-default layout')
+
+        d3.select('body').attr('class', 'night-theme');
     });
 
    d3.select('.head_label')
