@@ -44,10 +44,11 @@
 		</div>
 		
 		<div class="form-group">
-			<label for="interrupt">Interrupt:</label>
+		<!-- 	<label for="interrupt">Interrupt:</label>
 			<input id="interrupt" type="time" class="form-control" value = '02:40'>
 			<p class="fsmall italicize">record the time if you woke up <strong>in the middle</strong> of your sleep</p>
-		</div>
+		 -->
+    </div>
 		<div class="form-group">
 			<label for="star-rating">Rating:</label>
 			<input id="star-rating" type="number" class="rating" min=1 max=5 data-size='xs' data-show-caption='false' value = '3'>
@@ -82,15 +83,15 @@
          wakedate = $('#wakedate').val(),
          waketime = $('#waketime').val(),
          wake = makeADate(wakedate, waketime),
-         interrupt = $('#interrupt').val(),
-         interrupts = interrupt === "" ? [] : [interrupt],
+         // interrupt = $('#interrupt').val(),
+         // interrupts = interrupt === "" ? [] : [interrupt],
          rating = $('#star-rating').val(),
          comment = $('#comments').val()
 
   	 var entry = 
   	 [{'Bedtime': bed, 
      'Wakeup': wake, 
-     'Interrupt': interrupts,
+     // 'Interrupt': interrupts,
      'Rating': +rating,
      'Comment': comment
     }]
