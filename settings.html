@@ -36,8 +36,8 @@
 	    </table>
 		<br>
 		<hr>
-      <a id="reset" class="btn btn-default red center-block"><p>Reset</p></a>
-      <p class=" italicize" align = 'center'><strong>Delete all entries</strong> and set the  <strong>layout to default</strong></p>
+      <a id="reset" class="btn btn-default bred center-block"><p>Reset</p></a>
+      <p class=" italicize" align = 'center'><strong>Delete all entries</strong> and set the <strong>layout to default</strong></p>
 
 	</div>
 	<div class="center-block yesno-btns overlay">
@@ -82,12 +82,14 @@
 
        d3.selectAll('.layout')
          .attr('class', 'btn btn-default layout')
+
+        d3.select('body').attr('class', 'stand-theme');
     });
 
    d3.select('#cozy')
    .on('click', function() {
         para.layout = 'cozy'
-
+        
         d3.selectAll('.cozy')
         .style('text-decoration', 'underline')
         
@@ -96,6 +98,8 @@
 
         d3.selectAll('.layout')
          .attr('class', 'btn btn-default layout btn-sm')
+
+         d3.select('body').attr('class', 'cozy-theme');
     });
 
    d3.select('.head_label')
@@ -109,14 +113,14 @@
    d3.selectAll('.fmid')
    .style('font-size', para.fmid)
 
-   d3.selectAll('.red')
-   .style('background', '#fb8072')
+   // d3.selectAll('.red')
+   // .style('background', '#fb8072')
 
    // d3.selectAll('.fblue')
    // .style('color', '#80b1d3')
 
-  d3.selectAll('.fred')
-   .style('color', '#fb8072')
+  // d3.selectAll('.fred')
+  //  .style('color', '#fb8072')
 
    if(para.layout == 'standard'){
        d3.selectAll('.layout')
