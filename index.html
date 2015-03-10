@@ -17,7 +17,8 @@
 <script>
    d3.select('#begin')
    .on('click', function() {
-      d3.select('body').html(''); // clean
+      d3.select('body').html('')
+      .attr('class', 'stand-theme'); // clean
 
       d3.html('2-main.html', function(err, d) {
           if(err){
