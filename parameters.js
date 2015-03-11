@@ -187,12 +187,12 @@ function getHoursBetween (d1, d2) {
 
 
 $(document).ready(function(){
-$("#back-save-custom").click(function(){
+$("#back-save-custom").on('click', function(){
     $(".overlay").show();
-    $(".overlay .yes-btn").click(function() {
+    $(".overlay .yes-btn").on('click', function() {
         window.location = "9-view_entries.html";
     });
-    $(".overlay .no-btn").click(function () {
+    $(".overlay .no-btn").on('click', function () {
         window.location = "2-main.html";
     });
 });
@@ -239,7 +239,7 @@ $("#back-save-custom").click(function(){
 // });
 // moved to edit1 html
 
-$(".layout-btn").click(function(){
+$(".layout-btn").on('click', function(){
     $(this).addClass('active');
     $(this).siblings(".btn").removeClass('active');
 });
