@@ -1,0 +1,113 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+</head>
+<body>
+    
+<!--script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="parameters.js"></script-->
+<!-- All js got ran in first html-->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+    </div>
+      <a class="navbar-link back-btn giveup-entry">Back</a>
+  </div>
+</nav>
+
+<div class="container sleep-bg clickable">
+    <div class="bg-text">
+        <h1 class="text-center">G'Night!</h1>
+        <p class="text-center">Tap here when you wake up to record the time</p>
+    </div>
+    <div class="center-block sleep-btns overlay">
+      <a class="btn btn-default" role="button" id = 'cont_sleep'>Continue to Sleep</a>
+      <a class="btn btn-default" role="button" id = 'get_up'>Get Up Now</a>
+
+    </div>
+</div>    <div class="center-block yesno-btns overlay-save">
+     <p><img src = "/img/alert.png" vertical-center = 'center' align = 'left' width = '30'/>Go back will give up this entry. <strong>Continue </strong>to go back?</p>
+      <a id = "nope" class="no-btn btn btn-default" role="button">Nope</a>
+      <a id = "yup" class="yes-btn btn btn-default save" role="button">Yup</a>
+     </div>
+
+<script>
+
+  /* rm this later
+   * fm: this was in parameters.js
+   */
+
+  $(".overlay-save").hide(); 
+
+  $(".giveup-entry").click(function(){
+    $(".overlay-save").show();
+  });
+
+    $(".overlay-save .yes-btn").click(function() {
+        d3.select('body').html('');
+
+        d3.html('3-add_entry.html', function(err, d) {
+          if(err){
+            console.log('Oops. nope died.')
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+    $(".overlay-save .no-btn").click(function () {
+       $(".overlay-save ").hide();
+    });
+
+    $(".sleep-bg").click(function() {
+       $(".overlay").show();
+    });
+
+  function directToWakeUp() {
+    window.location = "5-wake_up.html";
+  }
+
+   // point the continue to sleep button to 4-good_night.html page
+   d3.select('#cont_sleep')
+   .on('click', function() {
+      d3.select('body').html(''); // clean
+
+      d3.html('4-good_night.html', function(err, d) {
+          if(err){
+            console.log('Oops. Good night died.')
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   // point the get up now button to 6-auto_entry.html page
+   d3.select('#get_up')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('6-auto_entry.html', function(err, d) {
+          if(err){
+            console.log(err);
+            console.log('Oops. auto_entry died.')
+          }
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
+
+   d3.selectAll('.fmid')
+   .style('font-size', para.fmid)
+
+</script>
+</body></html>

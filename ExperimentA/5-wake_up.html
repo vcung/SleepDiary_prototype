@@ -1,0 +1,44 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+</head>
+<body>
+    
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="parameters.js"></script>
+
+
+<table align="center" class = 'headtitle'>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+    </div>
+  </div>
+</nav>
+
+<div class="container sleep-bg">
+  <div class="bg-text">
+    <h1 class="text-center">G'Night!</h1>
+    <p class="text-center">Tap here when you wake up to record the time</p>
+  </div>
+
+  <div class="center-block sleep-btns overlay relative">
+      <a href="4-good_night.html" class="btn btn-default btn-lg" role="button">Continue to Sleep</a>
+      <a href="6-auto-entry.html" class="btn btn-default btn-lg" role="button">Get Up</a>
+</div>
+
+<script>
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
+
+   d3.selectAll('.fmid')
+   .style('font-size', para.fmid)
+</script>
+</body></html>

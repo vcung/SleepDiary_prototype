@@ -1,0 +1,184 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+<link href="star-rating/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+<!--script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="parameters.js"></script !-->
+<!--All other js got ran in first html-->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand save-auto-entry"><p class = 'head_label'>Sleep Diary</p></a>
+    </div>
+      <a class="navbar-link back-btn save-auto-entry">Back</a>
+  </div>
+</nav>
+<div class="container">
+	<form class="sm-screen center-block">
+		<div class="form-group">
+  		<table vertical-align = 'center'>
+  			<tr><td><label>Bedtime:</label><td></tr>
+  			<tr>
+  				<td>
+            <div class='input-group date datepicker'>
+              <input id="beddate" type="text" class="inline-field form-control" value="2015-02-27">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </td>
+  				<td width = '10%'></td>
+          <td>
+            <div class='input-group date timepicker'>
+              <input id="bedtime" type="text" class="inline-field form-control" value="23:30">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+              </span>
+            </div>
+          </td>
+  			</tr>
+  			<tr><td><label>Wakeup:</label></td></tr>
+        <tr>
+  				<td>
+            <div class='input-group date datepicker'>
+              <input id="wakedate" type="text" class="inline-field form-control" value="2015-02-28">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </td>
+  	      <td width = '10%'></td>	        
+          <td>
+            <div class='input-group date timepicker'>
+              <input id="waketime" type="text" class="inline-field form-control" value="07:40">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+              </span>
+            </div>
+           </td>           
+        </tr>
+  	  </table>
+    </div>
+		
+  	<div class="form-group">
+  	<!-- 	<label for="interrupt">Interrupt:</label>
+  		<input id="interrupt" type="time" class="form-control" value = '02:40'>
+  		<p class="fsmall italicize">record the time if you woke up <strong>in the middle</strong> of your sleep</p>
+  	 -->
+    </div>
+  	<div class="form-group">
+  		<label for="star-rating">Rating:</label>
+  		<input id="star-rating" type="number" class="rating" min=1 max=5 data-size='xs' data-show-caption='false' value = '3'>
+  		<p class="fsmall italicize">please <strong>rate</strong> your <strong>sleep quality</strong></p>
+  		<p id = 'rating'></p>
+  	</div>
+  	<div class="form-group">
+  		<label for="comments">Comments:</label>
+  		<textarea id="comments" row=3 class="form-control"></textarea>
+  	</div>
+  	<div align = 'right'>
+	     <!--a href="9-view_entries.html" type="button" class="btn btn-default save">Save</a-->
+	     <a id = 'save' type="button" class="btn btn-default save">Save</a>
+    </div>
+  </form>
+  <div class="center-block yesno-btns overlay">
+    <p><img src = "img/alert.png" vertical-center = 'center' align = 'left' width = '30'/>Do you want to save this entry?</p>
+		<!--a href="2-main.html" class="no-btn btn btn-default" role="button">Nope</a-->
+    <a id = "nope" class="no-btn btn btn-default" role="button">Nope</a>
+    <a id = "yup" class="yes-btn btn btn-default save" role="button">Yup</a>
+	</div>
+</div>
+
+  <script src="star-rating/js/star-rating.min.js" type="text/javascript"></script>
+  <script>
+
+ /*Initiate Calendar and Time picker*/
+  $('.datepicker').datetimepicker({
+      format: 'YYYY-MM-DD '
+  });
+
+  $('.timepicker').datetimepicker({
+      format: 'hh:mm A'
+  });
+  
+  function save(){
+     var beddate = $('#beddate').val(),
+         bedtime = $('#bedtime').val(),
+         bed = makeADate(beddate, bedtime)
+         wakedate = $('#wakedate').val(),
+         waketime = $('#waketime').val(),
+         wake = makeADate(wakedate, waketime),
+         // interrupt = $('#interrupt').val(),
+         // interrupts = interrupt === "" ? [] : [interrupt],
+         rating = $('#star-rating').val(),
+         comment = $('#comments').val()
+
+  	 var entry = 
+  	 [{'Bedtime': bed, 
+     'Wakeup': wake, 
+     // 'Interrupt': interrupts,
+     'Rating': +rating,
+     'Comment': comment
+    }]
+     
+    // console.log(JSON.stringify(entry))
+      
+      //data.push(entry)
+      data = entry.concat(data)
+      d3.select('body').html('');
+
+      d3.html('9-view_entries.html', function(err, d) {
+          if(err){
+            console.log(err);
+          }
+          d3.select('body').node().appendChild(d);
+      });
+
+  }
+
+  $(".save-auto-entry").click(function(){
+    $(".overlay").show();
+  });
+
+  $(".overlay .yes-btn").click(function() {
+      save();
+  });
+
+  $(".overlay .no-btn").click(function () {
+      d3.select('body').html('');
+
+      d3.html('2-main.html', function(err, d) {
+        if(err){
+          console.log('Oops. nope died.')
+          console.log(err);
+        }
+        d3.select('body').node().appendChild(d);
+    });
+  });
+    
+ // point the save button to 9-view_entries.html page
+ d3.select('#save')
+ .on('click', function() {
+     save();
+  });
+
+ d3.select('.head_label')
+ .style('font-size', para.fhead)
+ .style('line-height', '100%')
+
+ d3.selectAll('.fmid')
+ .style('font-size', para.fmid)
+
+  </script>
+
+</body>
+</html>

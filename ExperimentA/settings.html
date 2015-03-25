@@ -1,0 +1,168 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+<link href="star-rating/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+<!--script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="parameters.js"></script>
+<script src="star-rating/js/star-rating.min.js" type="text/javascript"></script-->
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+    </div>
+      <a class="navbar-link back-btn">Back</a>
+  </div>
+</nav>
+<div class="container">
+	<div class="center-block sm-screen">
+		<table>
+			<tr>
+			<td><p>Looklike: </p></td>
+			<td class = 'standard'><a id = 'standard' class="layout btn btn-default" role = 'button'><p class = 'standard'>Standard</p></a></td>
+			<td width = '5%'>
+			</td>
+			<td class = 'cozy'><a id = 'cozy' class="layout btn btn-default" role = 'button'><p class = 'cozy'>Cozy</p></a></td>
+      <td width = '5%'>
+      </td>
+      <td class = 'night'><a id = 'night' class="layout btn btn-default" role = 'button'><p class = 'night'>Night</p></a></td>
+		  </tr>
+	    </table>
+		<br>
+		<hr>
+      <a id="reset" class="btn btn-default bred center-block"><p>Reset</p></a>
+      <p class=" italicize" align = 'center'><strong>Delete all entries</strong> and set the <strong>layout to default</strong></p>
+
+	</div>
+	<div class="center-block yesno-btns overlay">
+		<p><img src = "img/alert-red.png" vertical-center = 'center' align = 'left' width = '30'/>Continue to<font class = 'fred'> <strong>delete</strong></font> all entries and set the looklike to <font class = 'fred'><strong>default?</strong></font> </p>
+		<a id = 'nope' class="no-btn btn btn-default" role="button">Nope</a>
+		<a id = 'yup' class="yes-btn btn btn-default" role="button">Yup</a>
+	</div>
+</div>
+<script type="text/javascript" src = 'common_code.js'></script>
+<script>
+
+  $("#reset").click(function(){
+    $(".overlay").show();
+   });
+
+  $(".yes-btn").click(function() {
+        $('body').removeClass('cozy-theme');
+        data = [];
+        standard();
+        d3.select('body').html('');
+        d3.html('2-main.html', function(err, d) {
+          if(err){
+            console.log(err);
+          }
+        d3.select('body').node().appendChild(d);
+      });
+    });
+
+    $(".no-btn").click(function() {
+        $(".overlay").hide();
+    });
+
+
+  function standard(){
+       para.layout = 'standard'
+
+       d3.selectAll('.standard')
+        .style('text-decoration', 'underline')
+       
+       d3.selectAll('.night')
+        .style('text-decoration', 'none')
+
+       d3.selectAll('.cozy')
+         .style('text-decoration', 'none')
+
+       d3.selectAll('.layout')
+         .attr('class', 'btn btn-default layout')
+
+       d3.select('body').attr('class', 'stand-theme');
+  }
+
+
+   d3.select('#standard')
+   .on('click', function() {
+       standard();
+    });
+
+   d3.select('#cozy')
+   .on('click', function() {
+        para.layout = 'cozy'
+        
+        d3.selectAll('.cozy')
+        .style('text-decoration', 'underline')
+        
+        d3.selectAll('.standard')
+        .style('text-decoration', 'none')
+
+        d3.selectAll('.night')
+        .style('text-decoration', 'none')
+
+        d3.selectAll('.layout')
+         .attr('class', 'btn btn-default layout btn-sm')
+
+         d3.select('body').attr('class', 'cozy-theme');
+    });
+
+   d3.select('#night')
+   .on('click', function() {
+       para.layout = 'night'
+
+       d3.selectAll('.night')
+        .style('text-decoration', 'underline')
+       
+       d3.selectAll('.cozy')
+         .style('text-decoration', 'none')
+
+       d3.selectAll('.standard')
+         .style('text-decoration', 'none')
+
+       d3.selectAll('.layout')
+         .attr('class', 'btn btn-default layout')
+
+        d3.select('body').attr('class', 'night-theme');
+    });
+
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
+   .style('margin', 0)
+
+   d3.select('.' + para.layout)
+   .style('text-decoration', 'underline')
+
+   d3.selectAll('.fmid')
+   .style('font-size', para.fmid)
+
+   // d3.selectAll('.red')
+   // .style('background', '#fb8072')
+
+   // d3.selectAll('.fblue')
+   // .style('color', '#80b1d3')
+
+  // d3.selectAll('.fred')
+  //  .style('color', '#fb8072')
+
+   if(para.layout == 'standard'){
+       d3.selectAll('.layout')
+       .attr('class', 'btn btn-default btn-block layout')
+   }else{
+   	   d3.selectAll('.layout')
+       .attr('class', 'btn btn-default btn-block btn-sm layout')
+   }
+</script>
+</body>
+</html>

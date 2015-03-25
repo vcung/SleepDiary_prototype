@@ -1,0 +1,116 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> 
+<link type="text/css" rel="stylesheet" href="css/custom.css"> 
+</head>
+<body>
+
+<!--script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script-->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand"><p class = 'head_label'>Sleep Diary</p></a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div id = 'motto' class="center-block sm-screen italicize"><img src= "img/Diary1.jpg" width = "45px" vertical-align = 'top' align = 'left'/></div>
+        <div class="main-btns center-block btn-group-vertical" role="group">
+            <!--a href="3-add_entry.html" class="btn btn-default" role="button"><p class = 'menu_label'>New Entry</p></a-->
+           
+            <a class="btn btn-default" id = 'new_entry' role="button"><p class = 'menu_label'>Add an Entry</p></a>
+
+            <!--a href="7-select_time.html" class="btn btn-default" role="button"><p class = 'menu_label'>Analyze My Sleep</p></a-->
+
+            <a class="btn btn-default" id = "analyze_sleep" role="button"><p class = 'menu_label'>Analyze My Sleep</p></a>
+
+            <!--a href="9-view_entries.html" class="btn btn-default" role="button"><p class = 'menu_label'>View Entries</p></a-->
+
+            <a class="btn btn-default" id = "view_entries" role="button"><p class = 'menu_label'>View Entries</p></a>
+
+            <!--a href="settings.html" class="text-center btn btn-default" role="button"><p class = 'menu_label'>Settings</p></a-->
+
+            <a class="btn btn-default" id = "settings" role="button"><p class = 'menu_label'>Settings</p></a>          
+        </div>
+</div>
+
+<script>
+   // point the new entry button to add entry page
+   d3.select('#new_entry')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('3-add_entry.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   // point the analyze my sleep button to select_time analyze sleep page
+   d3.select('#analyze_sleep')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('7-select_time.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+
+   // point the view entries button to view entries page
+   d3.select('#view_entries')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('9-view_entries.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+
+  // point the settings button to Settings page
+   d3.select('#settings')
+   .on('click', function() {
+      d3.select('body').html('');
+
+      d3.html('settings.html', function(err, d) {
+          if(err) console.log(err);
+          d3.select('body').node().appendChild(d);
+      });
+    });
+
+   d3.select('#motto')
+   .append('p')
+   .text(function(){
+       var seed = Math.random() * motto.length
+       return motto[Math.round(seed)];
+   })
+
+   d3.select('.head_label')
+   .style('font-size', para.fhead)
+   .style('line-height', '100%')
+
+   d3.selectAll('.menu_label')
+    .style('line-height', function(){
+          if(para.layout === 'standard' || para.layout === 'night'){
+            //console.log('standard')
+            return '150%'
+          }
+          else if(para.layout === 'cozy'){
+            //console.log('cozy')
+            return '100%'
+          }
+    })
+    .style('font-size', para.fbig)
+    .style('margin', 0)
+   //console.log(data)
+</script>
+</body></html>
